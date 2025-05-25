@@ -145,6 +145,9 @@ uvicorn api.main:app --reload
 ```
 Then open your browser at: http://127.0.0.1:8000
 
+URL for the Demonstration video:
+https://drive.google.com/file/d/1y1bWdMWM92jMI4DZM5-AQFf9Q1OaWIV9/view?usp=sharing
+
 <img width="1128" alt="image" src="https://github.com/user-attachments/assets/365a9488-7ee1-4337-8367-c5d61acbed7c" />
 
 
