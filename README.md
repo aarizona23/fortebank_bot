@@ -4,12 +4,13 @@ An intelligent chatbot system for ForteBank that uses NLP techniques (Sentence-B
 
 ## 🚀 Features
 
-- ✅ Preprocessed and embedded data from ForteBank service descriptions
-- 🧠 Sentence-BERT model to convert user queries into semantic embeddings
-- 🔍 Semantic search using cosine similarity
-- 🌐 Simple web-based interface via FastAPI
-- 📎 Source links included with each result
-- 🗂️ Modular structure for easy maintenance
+- Used Web Scraping technologies (Selenium, BeautifulSoup) to collect data from ForteBank pages about cards, credits, deposits, transfers, salary projects
+- Preprocessed and embedded data from ForteBank service descriptions
+- Sentence-BERT model to convert user queries into semantic embeddings
+- Semantic search using cosine similarity
+- Simple web-based interface via FastAPI
+- Source links included with each result
+- Modular structure for easy maintenance
 
 ---
 
