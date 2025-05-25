@@ -72,12 +72,13 @@ class ServiceSearch:
         Formats the search results into a user-friendly string.
         :return: str, formatted response with service details
         """
-        response = {"text": "", "url": ""}
+        response = {"text": ""}
         results = self.get_results(1)
         if results.empty:
             response["text"] = "Извините, я не нашёл подходящих услуг по вашему запросу."
             return response
         response["text"] = "Вот что я нашёл:\n"
         response["text"] += f"\n🔹 {results['full_text'].values[0][:1000]}"
-        response["url"] = results["url"].values[0]
+        if not results["url"].values[0]:
+            response["url"] = results["url"].values[0]
         return response
