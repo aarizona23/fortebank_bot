@@ -25,18 +25,18 @@ This project includes a custom web scraper that collects information about banki
 
 ### 📋 Collected Services 
 The scraper collects data about the following services:
--Bank Cards
--Credits (Loans)
--Deposits
--Money Transfers
--Salary Projects
+- Bank Cards
+- Credits (Loans)
+- Deposits
+- Money Transfers
+- Salary Projects
 
 ### 📄 Data Fields 
 Each scraped service includes:
--service_name – the category of the service (e.g., "card", "credit")
--name – the title of the individual product
--description – a short summary or explanation
--url – a link to the service details (if available)
+- service_name – the category of the service (e.g., "card", "credit")
+- name – the title of the individual product
+- description – a short summary or explanation
+- url – a link to the service details (if available)
 
 ### 📂 Output File 
 The collected data is saved into a single CSV file:
