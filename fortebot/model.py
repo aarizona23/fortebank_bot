@@ -67,17 +67,17 @@ class ServiceSearch:
         top_indices = similarities.argsort()[::-1][:top_k]
         return self.df.iloc[top_indices]
 
-    def search(self) -> str:
+    def search(self) -> dict:
         """
         Formats the search results into a user-friendly string.
         :return: str, formatted response with service details
         """
-
+        response = {"text": "", "url": ""}
         results = self.get_results(1)
         if results.empty:
-            return "Извините, я не нашёл подходящих услуг по вашему запросу."
-
-        response = "Вот что я нашёл:\n"
-        for _, row in results.iterrows():
-            response += f"\n🔹 {row['full_text'][:1000]}\n🔗 Подробнее: {row['url']}\n"
+            response["text"] = "Извините, я не нашёл подходящих услуг по вашему запросу."
+            return response
+        response["text"] = "Вот что я нашёл:\n"
+        response["text"] += f"\n🔹 {results['full_text'].values[0][:1000]}"
+        response["url"] = results["url"].values[0]
         return response

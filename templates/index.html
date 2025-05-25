@@ -9,6 +9,7 @@
         .message { margin-bottom: 15px; }
         .user { text-align: right; }
         .bot { text-align: left; color: darkblue; }
+        .message.bot a { color: #3366cc; text-decoration: underline; }
         .input-box { margin-top: 20px; }
         input[type="text"] { width: 90%; padding: 10px; }
         button { padding: 10px; }
@@ -22,8 +23,14 @@
             <div class="message {{ item.sender }}">
                 <strong>{{ "Вы:" if item.sender == "user" else "ForteBot:" }}</strong><br>
                 <span>{{ item.message | safe }}</span>
+                {% if item.sender == "bot" and item.url %}
+                    <br><a href="{{ item.url }}" target="_blank">🔗 Подробнее</a>
+                {% endif %}
             </div>
         {% endfor %}
+        {% if not chat_history %}
+            <p>Начните разговор с ForteBot!</p>
+        {% endif %}
     </div>
     <form method="post" class="input-box">
         <input type="text" name="user_message" placeholder="Введите ваш запрос..." required>

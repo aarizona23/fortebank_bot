@@ -34,7 +34,7 @@ def post_chat(request: Request, user_message: str = Form(...)):
 
     searcher = ServiceSearch(user_message)
     bot_response = searcher.search()
-    chat_history.append({"sender": "bot", "message": bot_response})
+    chat_history.append({"sender": "bot", "message": bot_response["text"], "url": bot_response["url"]})
 
     return templates.TemplateResponse("index.html", {
         "request": request,
