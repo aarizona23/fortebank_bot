@@ -1,0 +1,16 @@
+selenium==4.32.0
+beautifulsoup4==4.13.4
+pandas==2.2.3
+requests==2.32.3
+transformers==4.52.2
+torch==2.7.0
+sentence-transformers==4.1.0
+scikit-learn==1.6.1
+nltk==3.9.1
+uvicorn==0.34.2
+pydantic==2.11.4
+python-dotenv==1.1.0
+webdriver-manager==4.0.2
+numpy==2.2.6
+fastapi==0.115.12
+python-multipart==0.0.20

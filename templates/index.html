@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ForteBot – Чат</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+        .chatbox { max-width: 700px; margin: auto; background: white; padding: 20px; border-radius: 10px; }
+        .message { margin-bottom: 15px; }
+        .user { text-align: right; }
+        .bot { text-align: left; color: darkblue; }
+        .input-box { margin-top: 20px; }
+        input[type="text"] { width: 90%; padding: 10px; }
+        button { padding: 10px; }
+    </style>
+</head>
+<body>
+<div class="chatbox">
+    <h2>🤖 Чат с ForteBot</h2>
+    <div>
+        {% for item in chat_history %}
+            <div class="message {{ item.sender }}">
+                <strong>{{ "Вы:" if item.sender == "user" else "ForteBot:" }}</strong><br>
+                <span>{{ item.message | safe }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    <form method="post" class="input-box">
+        <input type="text" name="user_message" placeholder="Введите ваш запрос..." required>
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+</body>
+</html>
