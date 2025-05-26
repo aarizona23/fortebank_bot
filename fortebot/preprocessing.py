@@ -20,7 +20,8 @@ def clean_text(text) -> str:
     :param text:
     :return: text: str
     """
-    text = re.sub(r"[•\"“”«»\\n]", " ", text)
+    text = re.sub(r"[\"“”«»\n]", " ", text)
+    text = re.sub(r"[•]", ".", text)
     text = re.sub(r"\s+", " ", text).strip()
     text = text.replace("Подробнее", "")
     return text

@@ -79,6 +79,7 @@ class ServiceSearch:
             return response
         response["text"] = "Вот что я нашёл:\n"
         response["text"] += f"\n🔹 {results['full_text'].values[0][:1000]}"
-        if not results["url"].values[0]:
-            response["url"] = results["url"].values[0]
+        url_value = results["url"].values[0]
+        if pd.notna(url_value) and url_value.strip() != "":
+            response["url"] = url_value
         return response

@@ -15,4 +15,4 @@ numpy==2.2.6
 fastapi==0.115.12
 python-multipart==0.0.20
 starlette==0.46.2
-
+itsdangerous==2.2.0
